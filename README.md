@@ -37,5 +37,7 @@ There are three ways to run the code:
 3. (More difficult): Copy and paste the Python code from within the .ipynb notebook file into a Python source code file, and then execute the program from the command line (with all appropriate dependencies based on your IDE and OS)
 
 # Attribution
-The general approach used in creation of this project (which mostly influenced the ddpg_agent.py and ipynb filees) was from the DDPG implementation of BipedalWalker-v2 here: https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-bipedal 
-In addition, after I had working code - but an agent that wasn't learning - I knew something was wrong in the 'learn' method of the agent. I reviewed DDPG implementations of both Gym and Unity environments, and stumbled on an important line of code (that performs gradient clipping when training the critic) from this repo: https://github.com/AkshayS21/Reacher-Environment-Continuous-Control-with-DDPG-algorithm
+The general approach used in creation of this project (which mostly influenced the ddpg_agent.py and .ipynb files) was from the DDPG implementation of BipedalWalker-v2 here: \
+https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-bipedal \
+In addition, after I had working code - but an agent that wasn't learning - I knew something was wrong in the 'learn' method of the agent. I reviewed DDPG implementations of both Gym and Unity environments, and stumbled on an important line of code (that performs gradient clipping when training the critic) from this repo: \
+https://github.com/AkshayS21/Reacher-Environment-Continuous-Control-with-DDPG-algorithm
