@@ -6,7 +6,7 @@ In this project, we trained a DRL agent with the Unity MLAgents environment to t
 
 Each action is a vector of these four floating point torque values, corresponding to the torque to be applied to the two joints. Every entry in the action vector should be a number between -1.0 and 1.0. The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm.
 
-A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of the agent is to maintain its position at the target location for as many time steps as possible.  The environment is considered ‘solved’ when the average score is above 30.0 for the trailing 100 consecutive episodes.
+A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of the agent is to maintain its position at the target location for as many time steps as possible.  The environment is considered â€˜solvedâ€™ when the average score is above 30.0 for the trailing 100 consecutive episodes.
 
 The task is episodic. There were two possible projects possible, whereby a single agent is trained by itself, with the objective to achieve the minimum 30.0 score. Alternatively, a set of 20 agents could be trained at the same time, by paralleling the matrix computation required for calculations at every step of training. In that example, solving the environment requires achieving an average of 30.0 across all agents. 
 
@@ -36,3 +36,6 @@ There are three ways to run the code:
 2. Insert the code from 'model.py' and 'dqn_agent.py' into new (inserted) cells in the .ipynb notebook file, and execute everything from the single notebook file within a Jupyter notebook environment, or
 3. (More difficult): Copy and paste the Python code from within the .ipynb notebook file into a Python source code file, and then execute the program from the command line (with all appropriate dependencies based on your IDE and OS)
 
+# Attribution
+The general approach used in creation of this project (which mostly influenced the ddpg_agent.py and ipynb filees) was from the DDPG implementation of BipedalWalker-v2 here: https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-bipedal 
+In addition, after I had working code - but an agent that wasn't learning - I knew something was wrong in the 'learn' method of the agent. I reviewed DDPG implementations of both Gym and Unity environments, and stumbled on an important line of code (that performs gradient clipping when training the critic) from this repo: https://github.com/AkshayS21/Reacher-Environment-Continuous-Control-with-DDPG-algorithm
