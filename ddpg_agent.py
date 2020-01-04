@@ -1,3 +1,7 @@
+# ATTRIBUTION
+# general code and structure of approach: github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-bipedal
+# critic gradient clipping line of code:  github.com/AkshayS21/Reacher-Environment-Continuous-Control-with-DDPG
+
 import numpy as np
 import random
 import copy
@@ -79,7 +83,7 @@ class Agent():
         Q_loss = F.mse_loss(Q_expected, Q_targets)
         self.critic_optimizer.zero_grad()
         Q_loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.critic_local.parameters(), 1)  # KM important for stable training
+        torch.nn.utils.clip_grad_norm_(self.critic_local.parameters(), 1) # KM important for stable training
         self.critic_optimizer.step()
         
         # train actor_local to maximize Q
